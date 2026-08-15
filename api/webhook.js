@@ -6,12 +6,10 @@ export default async function handler(req, res) {
   }
 
   console.log("===== WEBHOOK RECEIVED =====");
-  console.log("Headers:", req.headers);
-  console.log("Body:", req.body);
+  console.log(JSON.stringify(req.body, null, 2));
   console.log("============================");
 
   return res.status(200).json({
-    success: true,
-    received: req.body
+    success: true
   });
 }
